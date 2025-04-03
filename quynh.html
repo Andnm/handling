@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sinh nhật Quỳnh</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .birthday-link {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(45deg, #FF512F, #F09819);
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .birthday-link:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #F09819, #FF512F);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .birthday-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .birthday-link:hover:before {
+      opacity: 1;
+    }
+
+    .birthday-link:active {
+      transform: translateY(0);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Birthday cake icon */
+    .cake-icon {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* Animation for attention */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .birthday-link {
+      animation: pulse 2s infinite;
+    }
+
+    /* Confetti effect around the button */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #f0f;
+      border-radius: 50%;
+      z-index: -2;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .confetti-container {
+      position: relative;
+      width: 400px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="valentines-day">
+    <div class="envelope"></div>
+    <div class="heart"></div>
+    <div class="text btn-click">BẤM <br>VÀO <br>ĐÂY NÀ!</div>
+    <div class="front"></div>
+  </div>
+
+  <div id="card">
+    <div class="side one">
+      <img src="./quynh_img.jpg">
+    </div>
+    <div class="side two">
+      <p>Trân trọng kính gửi đến con người xênh đẹp đáng eo dễ xương siêu cấp zũ trụ đang đọc cái này!</p>
+      <p>Hôm nay sinh nhật bạn à?<br>
+        Chúc ấy tươi trẻ, mặn mà đáng yêu!<br>
+        Tiền bạc thoải mái ăn tiêu<br>
+        Bước sang tuổi mới yêu kiều thướt tha<br>
+        Nhớ là hậu sinh nhật nha<br>
+        Đi chơi, ăn lẩu hay là đi đâu?<br>
+        Nếu đi thỉnh anh một câu<br>
+        Anh sẽ xách xe và gâu (go) tận nhà!<br>
+      </p>
+      <p>Ngắn gọn súc tích dị hoy <br>
+        Chúc em cuối ngày sinh nhật zui zẻ.</p>
+
+      <p class="last-icon">🎂🎂🎂 😛😛😛</p>
+
+      <div class="confetti-container">
+        <a href="https://birthday-cake-mu.vercel.app/?name=M%E1%BA%A7n%20Mnuy%E1%BB%85n%20Mi%E1%BB%85m%20Mu%E1%BB%B3nh&shared=true"
+          class="birthday-link">
+          <span class="cake-icon">🎂</span>
+          Bấm vào đây để đi thổi nến
+        </a>
+
+        <!-- Generate confetti elements with JavaScript -->
+        <script>
+          function createConfetti() {
+            const container = document.querySelector('.confetti-container');
+            const colors = ['#ff0000', '#ff7700', '#ffff00', '#00ff00', '#0000ff', '#8a2be2', '#ff00ff'];
+
+            for (let i = 0; i < 50; i++) {
+              const confetti = document.createElement('div');
+              confetti.classList.add('confetti');
+              confetti.style.left = Math.random() * 300 + 'px';
+              confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+              confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear infinite`;
+              confetti.style.animationDelay = Math.random() * 5 + 's';
+              container.appendChild(confetti);
+            }
+          }
+
+          window.onload = createConfetti;
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
